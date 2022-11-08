@@ -1,4 +1,5 @@
 import React, { useContext } from 'react'
+import toast, { Toaster } from 'react-hot-toast';
 import { Link, useLoaderData, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../context/UserContext';
 
@@ -48,7 +49,7 @@ console.log(service);
         })
             .then(data => {
                 console.log(data)
-             
+                    
                     alert('review  added successfully')
                     form.reset();
                 
@@ -81,7 +82,9 @@ console.log(service);
           <textarea name='massage' className='w-[100%] border-primary border-4 h-[80px]'></textarea>
      <input onClick={() => window.location.reload()}  type="submit" value="Please Review" className='btn mx-auto bg-rose-400 text-[skyblue] font-bold'></input>
               </div>
-         </form>
+              <Toaster></Toaster>
+
+          </form>
 
 
 

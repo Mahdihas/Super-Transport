@@ -1,6 +1,6 @@
 import React from 'react'
 
-const MyReviewCard = ({order,handleDelete}) => {
+const MyReviewCard = ({order,handleDelete,handleStatusUpdate}) => {
     const { _id, img,date,serviceName
         ,    customer,message,    price,circle, name } = order;
   return (
@@ -22,7 +22,7 @@ const MyReviewCard = ({order,handleDelete}) => {
 
     <div className="card-actions my-2 w-[80%] mx-auto justify-between">
           <button onClick={() => handleDelete(_id)} className="btn btn-primary text-white">Delete</button>
-          <button onClick={() => handleDelete(_id)}  className="btn btn-primary text-white">Edit</button>
+          <button onClick={() => handleStatusUpdate(_id)}  className="btn btn-primary text-white">Edit</button>
 
     </div>
   </div>
