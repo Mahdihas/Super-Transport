@@ -84,12 +84,27 @@ console.log(orders);
 
 return (
 <div>
-    
-    
-    <h1> Your Review : { orders.length}</h1>
+{
+                                orders?.length===0?
+                <>  
+                    <div className=" h-[60vh] flex justify-center items-center">
+                        <h1 className='text-4xl font-bold'>No Review found Please Add a review</h1>
+                </div>
+                                    </>
+                                    :
+                      <>
+
+                    
     {
         orders.map(order=><MyReviewCard key={order._id} order={order} handleDelete={handleDelete}></MyReviewCard>)
     }
+                </>
+              
+            }
+        
+
+    
+     
 
 </div>
 )
