@@ -1,3 +1,5 @@
+import { FaUsersCog,FaStar,FaHeart } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 
 const ServiceCard = ({ product }) => {
@@ -11,9 +13,14 @@ const ServiceCard = ({ product }) => {
   <figure><img src={img} className="h-[300px] w-[100%]" alt="Shoes" /></figure>
   <div className="card-body">
                   <h2 className="card-title capitalize">{ name}</h2>
-    <p>If a dog chews shoes whose shoes does he choose?</p>
-    <div className="card-actions justify-end">
-      <button className="btn btn-primary">Buy Now</button>
+          <p>{des.length > 100 ? des.slice(0, 100) + '...' : des}</p>
+          <p>Price : {price}$</p>
+         <p className='flex items-center'>Rating : <FaStar className='text-yellow-500 px-4'></FaStar><FaStar className='text-yellow-500'></FaStar><FaStar className='text-yellow-500'></FaStar><FaStar className='text-yellow-500'></FaStar><FaStar className='text-yellow-500'></FaStar></p>
+
+
+      
+          <div className="card-actions w-full">
+          <Link to={`/service/${product._id}`}> <button className="btn btn-primary">view details </button></Link>
     </div>
   </div>
 </div>
