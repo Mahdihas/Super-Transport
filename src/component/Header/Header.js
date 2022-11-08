@@ -229,7 +229,7 @@ const Header = () => {
                   : 'font-medium tracking-wide text-[#e6e7e7] transition-colors duration-200 hover:text-deep-purple-accent-400'
               }
               >
-                Service
+                 Add service
               </NavLink>
         
 

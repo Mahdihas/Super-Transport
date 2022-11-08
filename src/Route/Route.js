@@ -1,16 +1,19 @@
 
 import { createBrowserRouter } from 'react-router-dom'
 import Addservice from '../component/Add service/Addservice'
+import AddServiceMap from '../component/Add service/AddServiceMap'
 import Blog from '../component/blog/Blog'
 import Error from '../component/error/Error'
 import Home from '../component/Home/Home'
 import Login from '../component/login/Login'
 import Register from '../component/login/Register'
 import Myreviews from '../component/My reviews/Myreviews'
+import DisplayReview from '../component/serviceDetails/DisplayReview'
 import ReviewForm from '../component/serviceDetails/ReviewForm'
 import ServiceDetails from '../component/serviceDetails/ServiceDetails'
 import Services from '../component/services/Services'
 import Main from '../layout/Main'
+import Private from '../private/Private'
 
 const router = createBrowserRouter([{
   path: '/',
@@ -24,18 +27,26 @@ const router = createBrowserRouter([{
       {
         path: '/',
    
+        // loader: async () =>{
+        //   return fetch('http://localhost:5000/services')
+        // },
         loader: async () =>{
-          return fetch('http://localhost:5000/services')
+          return fetch('http://localhost:5000/addedService')
         },
+       
        
         element: <Home></Home>
       },
       {
         path: '/home',
    
+        // loader: async () =>{
+        //   return fetch('http://localhost:5000/services')
+        // },
         loader: async () =>{
-          return fetch('http://localhost:5000/services')
+          return fetch('http://localhost:5000/addedService')
         },
+       
        
         element: <Home></Home>
       },
@@ -50,7 +61,7 @@ const router = createBrowserRouter([{
       },
       {
         path: '/Myreviews',
-        element:<Myreviews></Myreviews>
+        element:<Private><Myreviews></Myreviews></Private>
       },
       {
         path: '/blog',
@@ -67,13 +78,25 @@ const router = createBrowserRouter([{
         },
         element:<Services></Services>
       },
+
+      {
+        path: '/AddServices',
+        loader: async () =>{
+          return fetch('http://localhost:5000/addedService')
+        },
+        element:<AddServiceMap></AddServiceMap>
+      },
       {
         path:'',
           element: <ReviewForm></ReviewForm>,
           loader: ({params})=> fetch(`http://localhost:5000/services/${params.id}`)
       },
-
       {
+        path: '/show',
+        element:<DisplayReview></DisplayReview>
+      },
+      {
+
         path: '/service/:id',
           element: <ServiceDetails></ServiceDetails>,
           loader: ({params})=> fetch(`http://localhost:5000/services/${params.id}`)

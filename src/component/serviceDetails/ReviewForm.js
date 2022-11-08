@@ -8,7 +8,7 @@ const ReviewForm = () => {
     const {_id, name, img,price,des } = service;
 console.log(service);
     const { user} = useContext(AuthContext)
-    // const navigate = useNavigate();
+    const navigate = useNavigate();
 
     
     const handlePlaceOrder = event => {
@@ -49,6 +49,7 @@ console.log(service);
                 console.log(data)
                 if(data.acknowledged){
                     alert('Order placed successfully')
+                   
                     form.reset();
                 }
 

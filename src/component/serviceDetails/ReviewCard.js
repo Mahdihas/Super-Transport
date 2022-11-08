@@ -11,9 +11,7 @@ console.log(orders);
             fetch(`http://localhost:5000/order?email=${user?.email}`)
               
                 .then(res => {
-                    if (res.status === 401 || res.status === 403) {
-                        return logOut();
-                    }
+                   
                     return res.json();
                 })
                 .then(data => {
@@ -86,7 +84,7 @@ console.log(orders);
       <div>
           
           {
-              orders.map(order=><DisplayReview key={order._id} order={order}></DisplayReview>)
+              orders.map(order=><DisplayReview key={order._id} handleDelete={handleDelete} order={order}></DisplayReview>)
           }
 
     </div>
