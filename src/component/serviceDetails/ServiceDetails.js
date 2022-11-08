@@ -9,7 +9,7 @@ import ReviewForm from './ReviewForm';
 const ServiceDetails = () => {
     const service = useLoaderData([]);
     const {user}=useContext(AuthContext)
-    console.log(service);
+    // console.log(service);
     const { img,price,des,name,ratings} = service;
 
 
@@ -35,13 +35,13 @@ const ServiceDetails = () => {
 </div>
           </div>
 
-          <div className="sm:w-[40%]">
+          <div className=" sm:w-[40%]">
               
           {
                                 user?.uid ?
                 <>
 
-                 <ReviewForm></ReviewForm>
+                  <ReviewForm></ReviewForm>
 
                                     </>
                                     :
