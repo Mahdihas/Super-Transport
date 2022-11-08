@@ -8,6 +8,7 @@ import Home from '../component/Home/Home'
 import Login from '../component/login/Login'
 import Register from '../component/login/Register'
 import Myreviews from '../component/My reviews/Myreviews'
+import Update from '../component/My reviews/Update'
 import DisplayReview from '../component/serviceDetails/DisplayReview'
 import ReviewCard from '../component/serviceDetails/ReviewCard'
 import ReviewForm from '../component/serviceDetails/ReviewForm'
@@ -106,7 +107,12 @@ const router = createBrowserRouter([{
           loader: ({params})=> fetch(`http://localhost:5000/services/${params.id}`)
       }
       ,
-      
+      {
+        path: '/order/:id',
+        loader: ({params})=> fetch(`http://localhost:5000/order/${params.id}`),
+
+        element:<Update></Update>
+      }
   
       
     ]
