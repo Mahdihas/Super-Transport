@@ -1,14 +1,19 @@
 import React, { useContext } from 'react';
 import { Navigate, useLocation } from 'react-router-dom';
 import { AuthContext } from '../context/UserContext';
+import { useState, CSSProperties } from "react";
+
+import ClipLoader from "react-spinners/ClipLoader";
+
 
 
 const Private = ({children}) => {
     const {user, loading} = useContext(AuthContext);
     const location  = useLocation();
 
-    if(loading) {
-        return <h1 className='text-5xl'>Loading...</h1>
+    if(loading){
+        console.log('yes loading found');
+        return <div><ClipLoader color="#36d7b7" /></div>
     }
 
     if(user){
