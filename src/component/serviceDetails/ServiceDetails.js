@@ -4,6 +4,7 @@ import { FaUsersCog,FaStar,FaHeart } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { AuthContext } from '../../context/UserContext';
 import ReviewForm from './ReviewForm';
+import ReviewCard from './ReviewCard';
 
 
 const ServiceDetails = () => {
@@ -40,7 +41,9 @@ const ServiceDetails = () => {
           {
                                 user?.uid ?
                 <>
-
+                          <div className="">
+                              <ReviewCard></ReviewCard>
+                    </div>
                   <ReviewForm></ReviewForm>
 
                                     </>
