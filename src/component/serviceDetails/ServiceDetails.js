@@ -39,8 +39,8 @@ const ServiceDetails = () => {
           {
                                 user?.uid ?
                 <>
-reviews
-         
+
+                 
 
                                     </>
                                     :
