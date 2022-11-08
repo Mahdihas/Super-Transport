@@ -43,7 +43,7 @@ const ServiceDetails = () => {
                 <>
                 <ReviewCard service={service} Id={_id}></ReviewCard>
 
-               <ReviewForm></ReviewForm>
+               <ReviewForm ></ReviewForm>
               <div className="">
                     </div>
 

@@ -1,17 +1,16 @@
 import React, { useContext } from 'react'
-import { useLoaderData, useLocation, useNavigate } from 'react-router-dom';
+import { Link, useLoaderData, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../context/UserContext';
 
 const ReviewForm = () => {
  
+
+
     const service = useLoaderData();
     const {_id, name, img,price,des } = service;
 console.log(service);
     const { user } = useContext(AuthContext)
-    const location=useLocation()
-    const navigate = useNavigate();
-    const from = location.state?.from?.pathname || '/';
-
+ 
     
     const handlePlaceOrder = event => {
         event.preventDefault();
@@ -51,7 +50,6 @@ console.log(service);
                 console.log(data)
              
                     alert('review  added successfully')
-                    navigate(from, { replace: true });
                     form.reset();
                 
 
@@ -81,8 +79,8 @@ console.log(service);
           </div>
           <div className="text-center">
           <textarea name='massage' className='w-[100%] border-primary border-4 h-[80px]'></textarea>
-              <input type="submit" value="Please Review" className='btn mx-auto bg-rose-400 text-[skyblue] font-bold'></input>
-          </div>
+     <input onClick={() => window.location.reload()}  type="submit" value="Please Review" className='btn mx-auto bg-rose-400 text-[skyblue] font-bold'></input>
+              </div>
          </form>
 
 
