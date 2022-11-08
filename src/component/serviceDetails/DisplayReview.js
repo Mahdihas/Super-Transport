@@ -2,7 +2,10 @@ import React from 'react'
 
 const DisplayReview = ({order,handleDelete}) => {
     const { _id, img,date,serviceName
-        ,        price,circle, name } = order;
+    , price, circle, name } = order;
+  
+  
+  
   return (
       <div>
       

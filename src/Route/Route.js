@@ -9,6 +9,7 @@ import Login from '../component/login/Login'
 import Register from '../component/login/Register'
 import Myreviews from '../component/My reviews/Myreviews'
 import DisplayReview from '../component/serviceDetails/DisplayReview'
+import ReviewCard from '../component/serviceDetails/ReviewCard'
 import ReviewForm from '../component/serviceDetails/ReviewForm'
 import ServiceDetails from '../component/serviceDetails/ServiceDetails'
 import Services from '../component/services/Services'
@@ -78,6 +79,13 @@ const router = createBrowserRouter([{
         },
         element:<Services></Services>
       },
+      {
+        path: '/review',
+        loader: async () =>{
+          return fetch('http://localhost:5000/services')
+        },
+        element:<ReviewCard></ReviewCard>
+      },
 
       {
         path: '/AddServices',
@@ -91,10 +99,10 @@ const router = createBrowserRouter([{
           element: <ReviewForm></ReviewForm>,
           loader: ({params})=> fetch(`http://localhost:5000/services/${params.id}`)
       },
-      {
-        path: '/show',
-        element:<DisplayReview></DisplayReview>
-      },
+      // {
+      //    path: '/service/:id',
+      //   element:<DisplayReview></DisplayReview>
+      // },
       {
 
         path: '/service/:id',

@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import { useLoaderData, useNavigate } from 'react-router-dom';
+import { useLoaderData, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../context/UserContext';
 
 const ReviewForm = () => {
@@ -7,8 +7,10 @@ const ReviewForm = () => {
     const service = useLoaderData();
     const {_id, name, img,price,des } = service;
 console.log(service);
-    const { user} = useContext(AuthContext)
+    const { user } = useContext(AuthContext)
+    const location=useLocation()
     const navigate = useNavigate();
+    const from = location.state?.from?.pathname || '/';
 
     
     const handlePlaceOrder = event => {
@@ -47,11 +49,11 @@ console.log(service);
         })
             .then(data => {
                 console.log(data)
-                if(data.acknowledged){
-                    alert('Order placed successfully')
-                   
+             
+                    alert('review  added successfully')
+                    navigate(from, { replace: true });
                     form.reset();
-                }
+                
 
             })
             .catch(er => console.error(er));
@@ -65,7 +67,7 @@ console.log(service);
           <div className="flex justify-center">
           {/* <h1 className='font-bold text-4xl text-[skyblue] mx-4'>You have chosen {name}</h1> */}
         </div>
-          <form onSubmit={handlePlaceOrder} className='my-12'>
+          <form   onSubmit={handlePlaceOrder} className='my-12'>
               
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full my-12">
           <input name='first' type="text" placeholder="First Name" defaultValue={user?.name} className="input input-bordered " />

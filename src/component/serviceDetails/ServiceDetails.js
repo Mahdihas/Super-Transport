@@ -11,7 +11,7 @@ const ServiceDetails = () => {
     const service = useLoaderData([]);
     const {user}=useContext(AuthContext)
     // console.log(service);
-    const { img,price,des,name,ratings} = service;
+    const { _id,img,price,des,name,ratings} = service;
 
 
 
@@ -39,12 +39,13 @@ const ServiceDetails = () => {
           <div className=" sm:w-[40%]">
               
           {
-                                user?.uid ?
+                                user?.email?
                 <>
-                          <div className="">
-                              <ReviewCard></ReviewCard>
+                <ReviewCard service={service} Id={_id}></ReviewCard>
+
+               <ReviewForm></ReviewForm>
+              <div className="">
                     </div>
-                  <ReviewForm></ReviewForm>
 
                                     </>
                                     :
