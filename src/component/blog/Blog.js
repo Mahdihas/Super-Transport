@@ -3,7 +3,9 @@ import AddServiceMap from '../Add service/AddServiceMap'
 
 const Blog = () => {
   return (
-    <div><AddServiceMap></AddServiceMap></div>
+    <div>
+      Blog
+    </div>
   )
 }
 
