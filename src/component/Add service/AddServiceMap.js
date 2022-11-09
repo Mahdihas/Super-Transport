@@ -4,7 +4,7 @@ import AddedServiceCard from './AddedServiceCard';
 
 const AddServiceMap = () => {
     
-  const { count, addService } = useLoaderData([]);
+  const  addService  = useLoaderData([]);
   const newAddServices = [...addService.slice(0, 3)];
 
 

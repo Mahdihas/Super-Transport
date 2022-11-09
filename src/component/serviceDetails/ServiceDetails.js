@@ -30,7 +30,7 @@ const ServiceDetails = () => {
 
       
           <div className="card-actions w-full">
-          <button className="btn btn-primary">button</button>
+          <button className="btn btn-primary text-white">Contact Me</button>
     </div>
   </div>
 </div>

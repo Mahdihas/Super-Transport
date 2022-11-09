@@ -14,22 +14,31 @@ const Home = () => {
 
 
 
-  const [products, setProducts] = useState([]);
+//   const [products, setProducts] = useState([]);
 
-  const newProducts = [...products.slice(0, 3)];
-  // console.log(newProducts);
+//   const newProducts = [...products.slice(0, 3)];
+//   // console.log(newProducts);
   
-  useEffect(() => {
-    const url = `http://localhost:5000/services`;
+//   useEffect(() => {
+//     const url = `http://localhost:5000/services`;
 
-    fetch(url)
-        .then(res => res.json())
-        .then(data => {
+//     fetch(url)
+//         .then(res => res.json())
+//         .then(data => {
       
-            setProducts(data.products);
-        })
-}, [products])
+//             setProducts(data.products);
+//         })
+// }, [products])
 
+  const [services, setServices] = useState([]);
+  const newAddServices = [...services.slice(0, 3)];
+
+    
+useEffect( () =>{
+    fetch('http://localhost:5000/services')
+    .then(res =>res.json())
+    .then(data => setServices(data))
+}, []);
   
 
   return (
@@ -53,7 +62,7 @@ const Home = () => {
            
           
         {
-          newProducts.map(service=><HomeCard key={service._id} service={service}></HomeCard>)
+          newAddServices.map(service=><HomeCard key={service._id} service={service}></HomeCard>)
           }
           
         </div>
