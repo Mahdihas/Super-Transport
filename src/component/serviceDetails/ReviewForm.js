@@ -2,10 +2,11 @@ import React, { useContext } from 'react'
 import toast, { Toaster } from 'react-hot-toast';
 import { Link, useLoaderData, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../context/UserContext';
+import useTitle from '../../hook/useTitle';
 
 const ReviewForm = () => {
  
-
+useTitle('service')
 
     const service = useLoaderData();
     const {_id, name, img,price,des } = service;
@@ -43,7 +44,8 @@ console.log(service);
         fetch('http://localhost:5000/order',{
             method: 'POST',
             headers: {
-                'content-type': 'application/json'
+                'content-type': 'application/json',
+                authorization: `Bearer ${localStorage.getItem('Tranport-token')}`
             },
             body: JSON.stringify(order)
         })
@@ -80,7 +82,7 @@ console.log(service);
           </div>
           <div className="text-center">
           <textarea name='massage' className='w-[100%] border-primary border-4 h-[80px]'></textarea>
-     <input onClick={() => window.location.reload()}  type="submit" value="Please Review" className='btn mx-auto bg-rose-400 text-[skyblue] font-bold'></input>
+     <input  type="submit" value="Please Review" className='btn mx-auto bg-rose-400 text-[skyblue] font-bold'></input>
               </div>
               <Toaster></Toaster>
 

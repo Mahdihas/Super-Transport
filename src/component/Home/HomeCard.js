@@ -1,6 +1,9 @@
 import React from 'react'
 import { FaUsersCog,FaStar,FaHeart } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { PhotoProvider, PhotoView } from 'react-photo-view';
+import 'react-photo-view/dist/react-photo-view.css';
+
 
 
 const HomeCard = ({ service }) => {
@@ -10,9 +13,9 @@ const HomeCard = ({ service }) => {
   
   return (
       <div>
-          
-          <div className="card bg-base-100 shadow-xl">
-  <figure><img src={img} className="h-[300px] w-[100%]" alt="img" /></figure>
+         <PhotoProvider>
+          <div className="card overflow-hidden bg-base-100 shadow-xl">
+  <figure><PhotoView src={img}><img src={img} className="h-[300px] w-[100%]" alt="img" /></PhotoView></figure>
   <div className="card-body">
                   <h2 className="card-title capitalize">{ name}</h2>
           <p className='text-start'>{des.length > 100 ? des.slice(0, 100) + '...' : des}</p>
@@ -26,6 +29,7 @@ const HomeCard = ({ service }) => {
     </div>
   </div>
 </div>
+</PhotoProvider> 
     </div>
   )
 }

@@ -3,31 +3,16 @@ import { Link, useLoaderData, useNavigate } from 'react-router-dom'
 import map from '../../map.png';
 import { BsMailbox,BsGeoAltFill,BsTelephonePlus } from "react-icons/bs";
 import HomeCard from './HomeCard';
+import useTitle from '../../hook/useTitle';
 
 
 
 const Home = () => {
+ useTitle(' Home page')
 
 
 
 
-
-
-//   const [products, setProducts] = useState([]);
-
-//   const newProducts = [...products.slice(0, 3)];
-//   // console.log(newProducts);
-  
-//   useEffect(() => {
-//     const url = `http://localhost:5000/services`;
-
-//     fetch(url)
-//         .then(res => res.json())
-//         .then(data => {
-      
-//             setProducts(data.products);
-//         })
-// }, [products])
 
   const [services, setServices] = useState([]);
 
@@ -116,11 +101,11 @@ useEffect( () =>{
       </div>
       <h1 className='font-normal py-6 text-4xl text-center text-[#97ba1f] '>Contact Me</h1>
 
-      <div className="flex shadow-2xl border-[2px] border-[black] bg-[#262c31]">
+      <div className=" sm:flex shadow-2xl border-[2px] border-[black] bg-[#262c31]">
 
         <div className=" sm:w-[50%] py-6 px-6">
           <h1  className='text-semi-bold text-[#f8f6f9] px-4 py-2'>CONTACT DETAILS</h1>
-          <h1 className='text-4xl font-bold text-white px-4  py-2'>Station<span className='px-2 text-[#ffffde]'>LOCATIONS</span></h1>
+          <h1 className='text-2xl sm:text-4xl font-bold text-white px-4  py-2'>Station<span className='px-2 text-[#ffffde]'>LOCATIONS</span></h1>
           <p className='text-semi-bold text-[#f8f6f9] px-4  py-2'>For Any Kind of Emergancy transportation <br /> you can contac us.</p>
           <div className="">
             <p className='my-4 text-1xl text-[#f8f6f9] font-semibold'> <span className=' px-4 py-2  hover:bg-[#97ba1f] '>Gazipur</span> <span className=' px-4 py-2  hover:bg-[#97ba1f] '>Uttora</span> <span className=' px-4 py-2  hover:bg-[#97ba1f] '>Barishal</span></p>

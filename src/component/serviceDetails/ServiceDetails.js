@@ -5,11 +5,14 @@ import { Link } from "react-router-dom";
 import { AuthContext } from '../../context/UserContext';
 import ReviewForm from './ReviewForm';
 import ReviewCard from './ReviewCard';
+import useTitle from '../../hook/useTitle';
 
 
 const ServiceDetails = () => {
     const service = useLoaderData([]);
-    const {user}=useContext(AuthContext)
+  const { user } = useContext(AuthContext)
+  
+  useTitle('service')
     // console.log(service);
     const { _id,img,price,des,name,ratings} = service;
 
@@ -19,7 +22,7 @@ const ServiceDetails = () => {
       <div className='flex  my-6 px-4'>
           <div className="sm:w-[60%]">
               
-          <div className="card bg-base-100 shadow-xl">
+          <div className="card overflow-hidden bg-base-100 shadow-xl">
   <figure><img src={img} className="h-[300px] w-[100%]" alt="Shoes" /></figure>
   <div className="card-body">
                   <h2 className="card-title capitalize">{ name}</h2>

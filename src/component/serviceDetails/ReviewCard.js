@@ -5,24 +5,24 @@ import DisplayReview from './DisplayReview';
 
 const ReviewCard = ({service,Id}) => {
     const { user, logOut } = useContext(AuthContext);
-const navigate=useNavigate()
 
 
     
     const [orders, setOrders] = useState([]);
+    console.log(orders);
 
     
 console.log(orders);        
       
         useEffect(() => {
-            fetch(`http://localhost:5000/Allorder?id=${service,Id}`)
+            fetch(`http://localhost:5000/Allorder?id=${service?._id,Id}`)
               
             .then(res => res.json())
                 .then(data => {
                     setOrders(data);
                  
                 })
-        }, [service,Id])
+        }, [orders,service?._id,Id])
         console.log(orders);
       
         const handleDelete = id => {
@@ -46,10 +46,7 @@ console.log(orders);
   return (
       <div>
                   
-{/*           
-          {
-              orders.map(order=><DisplayReview key={order._id} handleDelete={handleDelete} order={order}></DisplayReview>)
-          } */}
+
                  
                  {
               orders.map(order=><DisplayReview key={order._id} handleDelete={handleDelete} order={order}></DisplayReview>)

@@ -192,7 +192,7 @@ const Header = () => {
            
 
             <span className='ml-2 text-xl text-white font-bold tracking-wide #302e2c text-shadow-lg'>
-            Volunteer <span className='text-[#97ba1f]'>Platform</span>
+            Super <span className='text-[#97ba1f]'>Transport </span>
 
             </span>
           </Link>

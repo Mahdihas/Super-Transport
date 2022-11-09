@@ -1,15 +1,16 @@
 import React from 'react'
+import useTitle from '../../hook/useTitle';
 
 const DisplayReview = ({order,handleDelete}) => {
     const { _id, img,date,serviceName
     , price,customer, circle, message,name } = order;
-  
+   useTitle('service')
   
   
   return (
       <div>
       
-  <div className="card-body shadow-xl mx-4">
+  <div className="card-body overflow-hidden shadow-xl mx-4">
               <h2 className="card-title">{serviceName}</h2>
         <img className='w-[40%]' src={img} alt="Shoes" />
         <p>Price : {price}</p>

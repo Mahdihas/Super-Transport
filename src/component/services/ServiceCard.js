@@ -1,16 +1,21 @@
 import { FaUsersCog,FaStar,FaHeart } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import useTitle from "../../hook/useTitle";
+import { PhotoProvider, PhotoView } from 'react-photo-view';
+import 'react-photo-view/dist/react-photo-view.css';
+
 
 
 const ServiceCard = ({ product }) => {
-    const { name,des,img,price} = product;
+  const { name, des, img, price } = product;
+  useTitle('service')
 
   
   return (
       <div>
-          
-          <div className="card bg-base-100 shadow-xl">
-  <figure><img src={img} className="h-[300px] w-[100%]" alt="Shoes" /></figure>
+         <PhotoProvider>
+          <div className="card overflow-hidden bg-base-100 shadow-xl">
+          <figure> <PhotoView src={img}><img src={img} className="h-[300px] w-[100%]" alt="Shoes" /></PhotoView></figure>
   <div className="card-body">
                   <h2 className="card-title capitalize">{ name}</h2>
           <p>{des.length > 100 ? des.slice(0, 100) + '...' : des}</p>
@@ -24,6 +29,7 @@ const ServiceCard = ({ product }) => {
     </div>
   </div>
 </div>
+</PhotoProvider> 
     </div>
   )
 }

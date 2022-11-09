@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import toast, { Toaster } from 'react-hot-toast';
 import { useLoaderData, useNavigate } from 'react-router-dom';
+import useTitle from '../../hook/useTitle';
 
 const Update = () => {
     const storedUser = useLoaderData();
+    useTitle('Update')
     
     const [order, setOrder] = useState(storedUser);
     const navigate=useNavigate()

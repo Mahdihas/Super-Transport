@@ -13,7 +13,7 @@ const Private = ({children}) => {
 
     if(loading){
         console.log('yes loading found');
-        return <div><ClipLoader color="#36d7b7" /></div>
+        return <div className='h-[50vh] w-full flex justify-center items-center'><ClipLoader size={100} color="#36d7b7" /></div>
     }
 
     if(user){

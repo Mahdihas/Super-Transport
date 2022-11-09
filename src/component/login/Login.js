@@ -2,6 +2,7 @@ import React, { useContext, useState } from 'react'
 import toast, { Toaster } from 'react-hot-toast';
 import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { AuthContext } from '../../context/UserContext';
+import useTitle from '../../hook/useTitle';
 import Social from './Social';
 
 
@@ -13,6 +14,7 @@ const Login = () => {
     const location = useLocation(); 
     const navigate = useNavigate()
     const [error, setError] = useState('');
+    useTitle('Login')
 
 
   const from = location.state?.from?.pathname || '/';
@@ -50,7 +52,7 @@ const Login = () => {
             .then(data => {
                 console.log(data);
                 // local storage is the easiest but not the best place to store jwt token
-                localStorage.setItem('genius-token', data.token);
+                localStorage.setItem('Tranport-token', data.token);
                 setError('');
                 toast.success('successfully login.')
 
@@ -78,7 +80,7 @@ const Login = () => {
   }
 
     return (
-        <div className="hero min-h-screen" style={{ backgroundImage: `url("http://webdesign-finder.com/amply/wp-content/uploads/2019/09/counter-bg.jpg")` }}>
+        <div className="hero min-h-screen" style={{ backgroundImage: `url("https://3.bp.blogspot.com/-cCaFCRcQK1I/TzZy16mAvSI/AAAAAAAABg4/qaCMAqYEJ-A/s1600/Copy+(2)+of+Copy+of+Wallpapers+Max+Ultimate+Pack+No.+(1369).jpg")` }}>
         <div className="hero-overlay "></div>
         <div className="hero-content text-center text-neutral-content">
           <div className="max-w-md">

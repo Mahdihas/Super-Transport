@@ -1,9 +1,12 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
+import useTitle from '../../hook/useTitle';
 
 const MyReviewCard = ({order,handleDelete,handleStatusUpdate}) => {
     const { _id, img,date,serviceName
         ,    customer,message,    price,circle, name } = order;
+  
+    useTitle('My review')
   return (
       <div className='w-[100%] sm:w-[80%] my-8 mx-auto'>
       

@@ -8,9 +8,7 @@ import Login from '../component/login/Login'
 import Register from '../component/login/Register'
 import Myreviews from '../component/My reviews/Myreviews'
 import Update from '../component/My reviews/Update'
-import DisplayReview from '../component/serviceDetails/DisplayReview'
 import ReviewCard from '../component/serviceDetails/ReviewCard'
-import ReviewForm from '../component/serviceDetails/ReviewForm'
 import ServiceDetails from '../component/serviceDetails/ServiceDetails'
 import Services from '../component/services/Services'
 import Main from '../layout/Main'
@@ -28,12 +26,6 @@ const router = createBrowserRouter([{
       {
         path: '/',
    
-        // loader: async () =>{
-        //   return fetch('http://localhost:5000/services')
-        // },
-        loader: async () =>{
-          return fetch('http://localhost:5000/addedService')
-        },
        
        
         element: <Home></Home>
@@ -41,13 +33,7 @@ const router = createBrowserRouter([{
       {
         path: '/home',
    
-        // loader: async () =>{
-        //   return fetch('http://localhost:5000/services')
-        // },
-        loader: async () =>{
-          return fetch('http://localhost:5000/addedService')
-        },
-       
+        
        
         element: <Home></Home>
       },
@@ -62,7 +48,7 @@ const router = createBrowserRouter([{
       },
       {
         path: '/Myreviews',
-        element:<Private><Myreviews></Myreviews></Private>
+        element:<Private> <Myreviews></Myreviews></Private>
       },
       {
         path: '/blog',
@@ -70,13 +56,11 @@ const router = createBrowserRouter([{
       },
       {
         path: '/Addservice',
-        element:<Addservice></Addservice>
+        element:<Private><Addservice></Addservice></Private> 
       },
       {
         path: '/Service',
-        // loader: async () =>{
-        //   return fetch('http://localhost:5000/services')
-        // },
+     
         element:<Services></Services>
       },
       {

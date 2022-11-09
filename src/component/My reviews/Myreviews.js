@@ -1,27 +1,38 @@
 import React, { useContext, useEffect, useState } from 'react'
 import toast, { Toaster } from 'react-hot-toast';
 import { AuthContext } from '../../context/UserContext';
+import useTitle from '../../hook/useTitle';
 import DisplayReview from '../serviceDetails/DisplayReview';
 import MyReviewCard from './MyReviewCard';
 
 
 const Myreviews = () => {
   const {user,logOut}=useContext(AuthContext)
-  const [orders, setOrders] = useState([])
+    const [orders, setOrders] = useState([])
+
     console.log(orders);      
+    useTitle('my review')
     
 
   useEffect(() => {
-      fetch(`http://localhost:5000/order?email=${user?.email}`)
+      fetch(`http://localhost:5000/order?email=${user?.email}`,{
+        headers: {
+            authorization: `Bearer ${localStorage.getItem('Tranport-token')}`
+        }
+    })
         
           .then(res => {
-             
+              if (res.status === 401 || res.status === 403) {
+                  return logOut();
+              }
               return res.json();
           })
+        
+         
           .then(data => {
               setOrders(data);
           })
-  }, [user?.email, logOut])
+  }, [user?.email,orders, logOut])
   console.log(orders);
 
 

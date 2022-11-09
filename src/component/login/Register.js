@@ -5,9 +5,11 @@ import toast, { Toaster } from 'react-hot-toast';
 import { AuthContext } from '../../context/UserContext';
 
 import Social from './Social';
+import useTitle from '../../hook/useTitle';
 
 const Register = () => {
     const [error, setError] = useState('');
+    useTitle('Register')
 
     const {createUser,updateUserProfile} = useContext(AuthContext);
     const handleSignUp = event =>{
@@ -50,7 +52,7 @@ const Register = () => {
   
 
     return (
-        <div className="hero min-h-screen" style={{ backgroundImage: `url("https://dogood.qodeinteractive.com/wp-content/uploads/2022/04/home-6-video-button-1536x620.jpg")` }}>
+        <div className="hero min-h-screen" style={{ backgroundImage: `url("https://www.autoguide.com/blog/wp-content/gallery/renault-trezor-concept-2017/Renault-Trezor-Concept-03.jpg")` }}>
         <div className="hero-overlay bg-opacity-60"></div>
         <div className="hero-content text-center text-neutral-content">
           <div className="max-w-md">
