@@ -1,7 +1,6 @@
 
 import { createBrowserRouter } from 'react-router-dom'
 import Addservice from '../component/Add service/Addservice'
-import AddServiceMap from '../component/Add service/AddServiceMap'
 import Blog from '../component/blog/Blog'
 import Error from '../component/error/Error'
 import Home from '../component/Home/Home'
@@ -88,18 +87,8 @@ const router = createBrowserRouter([{
         element:<ReviewCard></ReviewCard>
       },
 
-      {
-        path: '/AddServices',
-        loader: async () =>{
-          return fetch('http://localhost:5000/addedService')
-        },
-        element:<AddServiceMap></AddServiceMap>
-      },
      
-      // {
-      //    path: '/service/:id',
-      //   element:<DisplayReview></DisplayReview>
-      // },
+     
       {
 
         path: '/service/:id',

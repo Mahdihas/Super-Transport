@@ -1,5 +1,4 @@
 import React from 'react'
-import AddServiceMap from '../Add service/AddServiceMap'
 
 const Blog = () => {
   return (

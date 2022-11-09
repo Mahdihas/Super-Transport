@@ -13,7 +13,7 @@ const Addservice = () => {
     const price = form.price.value;
 
 
-    const order = {
+    const service = {
    
         name: name,  
         img:img,
@@ -29,12 +29,12 @@ const Addservice = () => {
     // else{
 
     // }
-    fetch('http://localhost:5000/addedService',{
+    fetch('http://localhost:5000/services',{
         method: 'POST',
         headers: {
             'content-type': 'application/json'
         },
-        body: JSON.stringify(order)
+        body: JSON.stringify(service)
     })
         .then(data => {
             console.log(data)

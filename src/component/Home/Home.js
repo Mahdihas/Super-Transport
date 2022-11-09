@@ -3,8 +3,7 @@ import { Link, useLoaderData, useNavigate } from 'react-router-dom'
 import map from '../../map.png';
 import { BsMailbox,BsGeoAltFill,BsTelephonePlus } from "react-icons/bs";
 import HomeCard from './HomeCard';
-import AddServiceMap from '../Add service/AddServiceMap';
-import AddedServiceCard from '../Add service/AddedServiceCard';
+
 
 
 const Home = () => {
@@ -31,11 +30,10 @@ const Home = () => {
 // }, [products])
 
   const [services, setServices] = useState([]);
-  const newAddServices = [...services.slice(0, 3)];
 
     
 useEffect( () =>{
-    fetch('http://localhost:5000/services')
+    fetch('http://localhost:5000/serviceLimit')
     .then(res =>res.json())
     .then(data => setServices(data))
 }, []);
@@ -62,7 +60,7 @@ useEffect( () =>{
            
           
         {
-          newAddServices.map(service=><HomeCard key={service._id} service={service}></HomeCard>)
+          services.map(service=><HomeCard key={service._id} service={service}></HomeCard>)
           }
           
         </div>
@@ -70,15 +68,7 @@ useEffect( () =>{
 <Link to={'/service'}>        <button className="btn text-center w-[200px] text-white mx-auto btn-primary">See All</button></Link>
         </div>
       </div>
-      <div className="">
-
-        <h1 className='font-normal py-6 text-4xl text-center text-[#97ba1f] '>Addeded Service</h1>
-        <AddServiceMap></AddServiceMap>
-        
-
-      </div>
-
-       
+    
 
 
       <h1 className='font-normal py-6 text-4xl text-center text-[#97ba1f] '>Progress</h1>
