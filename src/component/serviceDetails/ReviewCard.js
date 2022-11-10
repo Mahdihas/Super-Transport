@@ -25,22 +25,7 @@ console.log(orders);
         }, [orders,service?._id,Id])
         console.log(orders);
       
-        const handleDelete = id => {
-          const proceed = window.confirm('Are you sure, you want to cancel this order');
-          if (proceed) {
-              fetch(`https://server-side-weld.vercel.app/Allorder/${id}`,{
-                  method: 'DELETE'
-              })
-                  .then(res => res.json())
-                  .then(data => {
-                      if (data.deletedCount > 0) {
-                          alert('deleted successfully');
-                          const remaining = orders.filter(odr => odr._id !== id);
-                          setOrders(remaining);
-                      }
-                  })
-          }
-        }
+       
  
     
   return (
@@ -49,7 +34,7 @@ console.log(orders);
 
                  
                  {
-              orders.map(order=><DisplayReview key={order._id} handleDelete={handleDelete} order={order}></DisplayReview>)
+              orders.map(order=><DisplayReview key={order._id}  order={order}></DisplayReview>)
           } 
 
     </div>

@@ -58,9 +58,9 @@ const Social = () => {
 
 
   return (
-      <div className='text-center flex justify-between px-4'>
+      <div className='text-center flex justify-center my-2 px-4'>
           <button onClick={handleGoogle} className='btn border-[tomato] text-[tomato] bg-white'>Google</button>
-          <button onClick={handleGithub} className='btn border-[tomato] text-[tomato] bg-[skyblue]'>GitHub</button>
+          {/* <button onClick={handleGithub} className='btn border-[tomato] text-[tomato] bg-[skyblue]'>GitHub</button> */}
         <Toaster></Toaster>
     </div>
   )

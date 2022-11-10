@@ -1,7 +1,7 @@
 import React from 'react'
 import useTitle from '../../hook/useTitle';
 
-const DisplayReview = ({order,handleDelete}) => {
+const DisplayReview = ({order}) => {
     const { _id, img,date,serviceName
     , price,customer, circle, message,name } = order;
    useTitle('service')
@@ -21,9 +21,7 @@ const DisplayReview = ({order,handleDelete}) => {
           <p className='mx-4'>{customer}</p>
         </div>
         <p>Comment : {message}</p>
-    <div className="card-actions justify-end">
-      <button onClick={() => handleDelete(_id)}  className="btn btn-primary text-white">Delete</button>
-    </div>
+   
   </div>
 
           
