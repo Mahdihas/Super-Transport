@@ -14,7 +14,7 @@ const HomeCard = ({ service }) => {
   return (
       <div>
          <PhotoProvider>
-          <div className="card overflow-hidden bg-base-100 shadow-xl">
+          <div className="card h-[550px] overflow-hidden bg-base-100 shadow-xl">
   <figure><PhotoView src={img}><img src={img} className="h-[300px] w-[100%]" alt="img" /></PhotoView></figure>
   <div className="card-body">
                   <h2 className="card-title capitalize">{ name}</h2>
@@ -25,7 +25,7 @@ const HomeCard = ({ service }) => {
 
       
           <div className="card-actions w-full">
-            <Link to={`/service/${service._id}`}> <button className="btn btn-primary">view details </button></Link>
+            <Link to={`/service/${service._id}`}> <button className="btn text-white btn-primary">view details </button></Link>
     </div>
   </div>
 </div>

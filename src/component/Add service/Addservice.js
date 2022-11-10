@@ -1,11 +1,24 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import toast, { Toaster } from 'react-hot-toast';
 import { AuthContext } from '../../context/UserContext';
 import useTitle from '../../hook/useTitle';
 
+import ReactiveButton from 'reactive-button';
+
+
 
 const Addservice = () => {
   useTitle('Add Service')
+
+  const [state, setState] = useState('idle');
+
+  const onClickHandler = () => {
+      setState('loading');
+      setTimeout(() => {
+          setState('success');
+      }, 2000);
+  }
+
   const handlePlaceOrder = event => {
     event.preventDefault();
     const form = event.target;
@@ -65,8 +78,32 @@ return (
 
      </div>
       <div className="text-center">
-      <textarea name='des' className='w-[100%] border-primary border-4 h-[80px]'></textarea>
-          <input type="submit" value="Please Order" className='btn mx-auto btn-secondary text-[skyblue] font-bold' required></input>
+        <textarea name='des' className='w-[100%] border-primary border-4 h-[80px]'></textarea>
+        
+        <ReactiveButton
+            buttonState={state}
+            onClick={onClickHandler}
+            color={'teal'}
+            idleText={'Add service'}
+            loadingText={'Loading'}
+            successText={'Success'}
+            errorText={'Error'}
+            type={'submit'}
+            className={'class1 class2'}
+            style={{ borderRadius: '5px', font:'bold' ,padding:'15px 60px' }}
+            shadow={true}
+          rounded={true}
+          required
+         
+            messageDuration={2000}
+           
+
+
+        >
+       
+
+        </ReactiveButton>
+                
       </div>
      </form>
 

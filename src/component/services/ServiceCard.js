@@ -25,7 +25,7 @@ const ServiceCard = ({ product }) => {
 
       
           <div className="card-actions w-full">
-          <Link to={`/service/${product._id}`}> <button className="btn btn-primary">view details </button></Link>
+          <Link to={`/service/${product._id}`}> <button className="btn text-white btn-primary">view details </button></Link>
     </div>
   </div>
 </div>

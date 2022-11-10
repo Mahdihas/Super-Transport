@@ -1,12 +1,22 @@
 import React from 'react'
 import useTitle from '../../hook/useTitle'
+import { TypeAnimation } from 'react-type-animation';
+
 
 const Blog = () => {
 
   useTitle('Blog')
   return (<div className="">
     
-    <h1 className='text-4xl sm:text-5xl font-bold text-center my-3 bg-[#262c31] py-4 text-[#97ba1f] '>Some Important Question!</h1>
+    <h1 className='  text-center py-4 font-bold  my-3 bg-[#262c31]  text-[#97ba1f] '> <TypeAnimation
+    sequence={['Some', 1000, 'Some Important', 1000, 'Some Important Question!',
+               1000, 'Some Important', 1000, 'Some', 1000, '', 500 ]}
+                   //  Continuing previous Text
+    style={{ fontSize: '2em' }}
+    wrapper="div"
+    repeat={Infinity} 
+  /></h1>
+   
     <div className='grid grid-cols-1 md:grid-cols-2 gap-4 px-4 py-6'>
   <div className="card h-[auto] min:h-[580px] bg-base-100 shadow-xl">
 <div className="card-body">

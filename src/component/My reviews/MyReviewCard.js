@@ -1,6 +1,9 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 import useTitle from '../../hook/useTitle';
+import { PhotoProvider, PhotoView } from 'react-photo-view';
+import 'react-photo-view/dist/react-photo-view.css';
+
 
 const MyReviewCard = ({order,handleDelete,handleStatusUpdate}) => {
     const { _id, img,date,serviceName
@@ -8,11 +11,14 @@ const MyReviewCard = ({order,handleDelete,handleStatusUpdate}) => {
   
     useTitle('My review')
   return (
-      <div className='w-[100%] sm:w-[80%] my-8 mx-auto'>
+    <div className='w-[100%] sm:w-[80%] my-8 mx-auto'>
+               <PhotoProvider>
+
       
   <div className="card-body  shadow-2xl">
               <h2 className="card-title text-center text-slate-600"><p>Service Name : {serviceName}</p></h2>
-              <img className='w-[100%]  sm:w-[70%] mx-auto h-[200px]' src={img} alt="Shoes" />
+          <PhotoView src={img}>
+                          <img className='w-[100%]  sm:w-[70%] mx-auto h-[200px]' src={img} alt="Shoes" /></PhotoView>
         <p className='px-6 sm:px-12'>date : {date}</p>
         <p className='px-6 sm:px-12'>Price : <span className='text-yellow-600'>{price}$</span></p>
 
@@ -30,7 +36,8 @@ const MyReviewCard = ({order,handleDelete,handleStatusUpdate}) => {
 
 
     </div>
-  </div>
+        </div>
+        </PhotoProvider>
 
           
     </div>
