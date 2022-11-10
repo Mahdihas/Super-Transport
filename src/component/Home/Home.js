@@ -79,7 +79,7 @@ useEffect( () =>{
     </div>
   </div>
         </div>
-        <h1 className='font-normal py-6 text-4xl text-center text-[#97ba1f] '>MY Services</h1>
+        <h1 className='font-bold py-6 text-4xl text-center text-[#97ba1f] '>MY Services</h1>
         <div className=" grid grid-cols-1 text-center  sm:grid-cols-2 lg:grid-cols-3 gap-4 px-4 my-6">
            
           

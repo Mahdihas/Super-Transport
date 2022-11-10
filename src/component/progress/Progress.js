@@ -13,7 +13,7 @@ const Progress = () => {
   return (
       <div>
            <PhotoProvider>
-          <h1 className='font-normal py-6 text-4xl text-center text-[#97ba1f] '>Progress</h1>
+          <h1 className='font-bold py-6 text-4xl text-center text-[#97ba1f] '>Progress</h1>
 
 <div className="my-8 px-4 Work sm:flex ">
   <div className=" sm:w-[50%] h-[400px]">

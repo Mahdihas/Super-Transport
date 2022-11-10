@@ -9,7 +9,7 @@ const Contact = () => {
   return (
       <div>
           
-              <h1 className='font-normal py-6 text-4xl text-center text-[#97ba1f] '>Contact Me</h1>
+              <h1 className='font-bold py-6 text-4xl text-center text-[#97ba1f] '>Contact Me</h1>
 
               <div className=" sm:flex shadow-2xl border-[2px] border-[black] bg-[#262c31]">
 
