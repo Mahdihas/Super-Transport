@@ -15,7 +15,7 @@ const Myreviews = () => {
     
 
   useEffect(() => {
-      fetch(`http://localhost:5000/order?email=${user?.email}`,{
+      fetch(`https://server-side-weld.vercel.app/order?email=${user?.email}`,{
         headers: {
             authorization: `Bearer ${localStorage.getItem('Tranport-token')}`
         }
@@ -39,7 +39,7 @@ const Myreviews = () => {
   const handleDelete = id => {
     const proceed = window.confirm('Are you sure, you want to cancel this review');
     if (proceed) {
-        fetch(`http://localhost:5000/order/${id}`,{
+        fetch(`https://server-side-weld.vercel.app/order/${id}`,{
             method: 'DELETE'
         })
             .then(res => res.json())

@@ -13,7 +13,7 @@ const Update = () => {
     const handleUpdateUser = event =>{
         event.preventDefault();
         // console.log(user);
-        fetch(`http://localhost:5000/order/${storedUser._id}`, {
+        fetch(`https://server-side-weld.vercel.app/order/${storedUser._id}`, {
             method: 'PATCH',
             headers: {
                 'content-type': 'application/json'
@@ -42,9 +42,9 @@ const Update = () => {
     return (
         <div className='w-full h-[400px] flex justify-center items-center'>
             <div className="">
-            <h2 className='text-purple-500'>Please Update: {storedUser.name}</h2>
+            <h2 className='text-purple-500'>Please Update: {storedUser.customer}</h2>
             <form onSubmit={handleUpdateUser}>
-                <input className='border-[2px] px-6 py-2 my-2  border-[black]' onChange={handleInputChange} defaultValue={storedUser.name} type="text" name='name' placeholder='name' required />
+                <input className='border-[2px] px-6 py-2 my-2  border-[black]' onChange={handleInputChange} defaultValue={storedUser.customer} type="text" name='customer' placeholder='customer' required />
                 <br />
                 <input className='border-[2px] px-6 py-2 my-2  border-[black]'  onChange={handleInputChange} type="text" defaultValue={storedUser.serviceName} name='serviceName' placeholder='address' required />
                 <br />
@@ -52,7 +52,7 @@ const Update = () => {
                 <br />
                 <input className='border-[2px] px-6 py-2   border-[black]'  onChange={handleInputChange} type="text" defaultValue={storedUser.img} name='img' placeholder='address' required />
                 <br />
-                <input className='border-[2px] px-6 py-2 my-2  border-[black]'  onChange={handleInputChange} type="text" defaultValue={storedUser.circle} name="circle" id="" placeholder='email' required />
+                <input className='border-[2px] px-6 py-2 my-2  border-[black]'  onChange={handleInputChange} type="text" defaultValue={storedUser.circle} name="circle" id="" placeholder='profile picture' required />
                 <br />
                 <button className='btn btn-secondary text-white my-4' type="submit">Update review</button>
                 </form>  

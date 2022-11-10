@@ -19,7 +19,7 @@ const ServiceDetails = () => {
 
 
   return (
-      <div className='flex  my-6 px-4'>
+      <div className='w-full sm:flex  my-6 px-4'>
           <div className="sm:w-[60%]">
               
           <div className="card overflow-hidden bg-base-100 shadow-xl">

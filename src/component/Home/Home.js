@@ -18,7 +18,7 @@ const Home = () => {
 
     
 useEffect( () =>{
-    fetch('http://localhost:5000/serviceLimit')
+    fetch('https://server-side-weld.vercel.app/serviceLimit')
     .then(res =>res.json())
     .then(data => setServices(data))
 }, []);

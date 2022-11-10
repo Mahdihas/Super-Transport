@@ -6,12 +6,13 @@ import { AuthContext } from '../../context/UserContext';
 
 import Social from './Social';
 import useTitle from '../../hook/useTitle';
+import { AuthToken } from '../../auth';
 
 const Register = () => {
     const [error, setError] = useState('');
     useTitle('Register')
 
-    const {createUser,updateUserProfile} = useContext(AuthContext);
+    const {createUser,updateUserProfile,setLoading} = useContext(AuthContext);
     const handleSignUp = event =>{
         event.preventDefault();
         const form = event.target;
@@ -31,6 +32,12 @@ const Register = () => {
 
 
             // setAuthToken(user)
+
+            AuthToken(user)
+
+
+            setLoading(false)
+   
         })
         .catch(e => {
             console.error(e);

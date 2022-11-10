@@ -15,7 +15,7 @@ const ReviewCard = ({service,Id}) => {
 console.log(orders);        
       
         useEffect(() => {
-            fetch(`http://localhost:5000/Allorder?id=${service?._id,Id}`)
+            fetch(`https://server-side-weld.vercel.app/Allorder?id=${service?._id,Id}`)
               
             .then(res => res.json())
                 .then(data => {
@@ -28,7 +28,7 @@ console.log(orders);
         const handleDelete = id => {
           const proceed = window.confirm('Are you sure, you want to cancel this order');
           if (proceed) {
-              fetch(`http://localhost:5000/Allorder/${id}`,{
+              fetch(`https://server-side-weld.vercel.app/Allorder/${id}`,{
                   method: 'DELETE'
               })
                   .then(res => res.json())

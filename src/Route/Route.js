@@ -66,7 +66,7 @@ const router = createBrowserRouter([{
       {
         path: '/review',
         loader: async () =>{
-          return fetch('http://localhost:5000/services')
+          return fetch('https://server-side-weld.vercel.app/services')
         },
         element:<ReviewCard></ReviewCard>
       },
@@ -77,12 +77,12 @@ const router = createBrowserRouter([{
 
         path: '/service/:id',
           element: <ServiceDetails></ServiceDetails>,
-          loader: ({params})=> fetch(`http://localhost:5000/services/${params.id}`)
+          loader: ({params})=> fetch(`https://server-side-weld.vercel.app/services/${params.id}`)
       }
       ,
       {
         path: '/order/:id',
-        loader: ({params})=> fetch(`http://localhost:5000/order/${params.id}`),
+        loader: ({params})=> fetch(`https://server-side-weld.vercel.app/order/${params.id}`),
 
         element:<Update></Update>
       }

@@ -41,7 +41,7 @@ console.log(service);
         // else{
 
         // }
-        fetch('http://localhost:5000/order',{
+        fetch('https://server-side-weld.vercel.app/order',{
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
