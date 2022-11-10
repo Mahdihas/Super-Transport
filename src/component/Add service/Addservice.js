@@ -78,7 +78,7 @@ return (
 
      </div>
       <div className="text-center">
-        <textarea name='des' className='w-[100%] border-primary border-4 h-[80px]'></textarea>
+        <textarea placeholder='message' name='des' className='w-[100%] border-primary border-4 h-[80px]'></textarea>
         
         <ReactiveButton
             buttonState={state}

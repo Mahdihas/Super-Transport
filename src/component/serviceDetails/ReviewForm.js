@@ -52,7 +52,7 @@ console.log(service);
             .then(data => {
                 console.log(data)
                     
-                    alert('review  added successfully')
+                toast.success('review  added successfully')
                     form.reset();
                 
 
@@ -71,17 +71,17 @@ console.log(service);
           <form   onSubmit={handlePlaceOrder} className='my-12'>
               
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full my-12">
-          <input name='first' type="text" placeholder="First Name" defaultValue={user?.name} className="input input-bordered " />
-          <input name='last' type="text" placeholder="Last Name" defaultValue={user?.name} className="input input-bordered " />
+          <input name='first' type="text" placeholder="First Name" defaultValue={user?.name} className="input input-bordered "required />
+          <input name='last' type="text" placeholder="Last Name" defaultValue={user?.name} className="input input-bordered " required />
           <input name='email' type="text" placeholder="Your Email" defaultValue={user?.email} className="input input-bordered " readOnly />
-          <input name='date' type="date" placeholder="Your Phone" defaultValue='date' className="input input-bordered " />
+          <input name='date' type="date" placeholder="Your Phone" defaultValue='date' className="input input-bordered "required />
 
              
               
 
           </div>
           <div className="text-center">
-          <textarea name='massage' className='w-[100%] border-primary border-4 h-[80px]'></textarea>
+          <textarea name='massage' placeholder='message' className='w-[100%] border-primary border-4 h-[80px]'></textarea>
      <input  type="submit" value="Please Review" className='btn mx-auto bg-rose-400 text-[skyblue] font-bold'></input>
               </div>
               <Toaster></Toaster>
